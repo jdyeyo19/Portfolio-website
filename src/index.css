@@ -1,0 +1,48 @@
+main {
+  padding-top:80px;
+}
+
+/*NAVBAR*/
+.nav-link{
+  font-weight:500;
+}
+.nav-link:hover{
+  color:brown;
+}
+.sun {
+  background-color: yellow;
+  border-radius: 50%;
+}
+.moon {
+  background-color:#7171e8;
+  border-radius: 50%;
+}
+.social-icon {
+  width: 35px;
+  border-radius: 50%;
+  border: 1px solid #0d6efd ;
+}
+.social-icon:hover {
+  transform: scale(1.3);
+  transition: 0.5s;
+}
+.social-list:hover .social-icon:not(:hover){
+  transform: scale(1.1);
+}
+/*HOME*/
+.typing-cursor{
+  animation: blink 1s infinite;
+}
+
+@keyframes blink{
+  0%{opacity:1}
+  50%{opacity:0}
+  100%{opacity:1}
+}
+#home {
+  background-size: cover;
+}
+/*About*/
+#about {
+  padding-top: 80px;
+}

@@ -333,7 +333,7 @@ function Contact({ darkmode, englishMode }) {
                 placeholder={
                   englishMode
                     ? "Write your message here..."
-                    : "Escribe tu mensaje aquí..."
+                    : "Cuéntame en que te gustaria que trabajemos juntos..."
                 }
                 maxLength={500}
                 rows="6"

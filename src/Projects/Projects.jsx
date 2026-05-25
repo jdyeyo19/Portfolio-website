@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import {CircleArrowRight, CircleArrowLeft} from 'lucide-react'
 
 import littleLemonR from '../assets/littleLemonProject.png'
 
@@ -240,6 +241,23 @@ function Projects({darkmode,englishMode}) {
         <div
           className="d-flex justify-content-center gap-3 mt-4"
         >
+        <button
+        style={{
+          backgroundColor:"#0f172a",
+          borderRadius: "50%",
+          marginBottom: "1rem"
+        }}
+          onClick={()=>{
+            if((current-1) < 0){
+              let max = projects.length - 1;
+              setCurrent(max);
+            }else{
+              setCurrent(current-1);
+            }
+            }}
+        ><CircleArrowLeft style={{
+          width:"100%"
+        }} color="#38bdf8" fill="#1e293b" /></button>
           {projects.map((_, index) => (
             <button
               key={index}
@@ -255,6 +273,22 @@ function Projects({darkmode,englishMode}) {
               }}
             />
           ))}
+          <button
+            style={{
+              backgroundColor:"#0f172a",
+              borderRadius: "50%",
+              marginBottom: "1rem"
+            }}
+            onClick={()=>{
+              if((current + 1) > (projects.length-1)){
+                setCurrent(0);
+              }else{
+                setCurrent(current+1);
+              }
+              }}
+          ><CircleArrowRight style={{
+          width:"100%"
+        }} color="#38bdf8" fill="#1e293b" /></button>
         </div>
       </div>
     </section>

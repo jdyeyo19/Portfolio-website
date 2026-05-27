@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import {CircleArrowRight, CircleArrowLeft} from 'lucide-react'
-
+//Imagenes
 import littleLemonR from '../assets/littleLemonProject.png'
-
+import finanzasS from '../assets/finanzasS.jpg'
 const projects = [
   {
     title: "Little Lemon Restaurant",
@@ -16,26 +16,25 @@ const projects = [
   },
 
   {
-    title: "Task Management App",
-    spTitle:"Aplicación de gestión de tareas",
-    image:
-      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=1200&auto=format&fit=crop",
-    description: "Sistema de gestión de tareas colaborativo con función de arrastrar y soltar, actualizaciones en tiempo real y análisis de productividad.",
-    englishDescription:"Collaborative task management system with drag and drop, real-time updates and productivity analytics.",
-    technologies: ["React", "Tailwind", "Django REST"],
-    link: "https://example.com",
+    title: "Finanzas Simple App",
+    spTitle:"Finanzas Simple",
+    image: finanzasS,
+    description: "La aplicación más sencilla e intuitiva para gestionar tus ingresos y gastos personales. Con seguimiento en tiempo real, informes, gráficos y mucho más.",
+    englishDescription:"The simplest and most intuitive app for managing your personal income and expenses. With real-time tracking, reports, charts, and much more.",
+    technologies: ["React", "Tailwind", "Django Rest Framework"],
+    link: "https://finanzas-simple-rouge.vercel.app",
   },
 
-  {
-    title: "Analytics Dashboard",
-    spTitle:"Panel de Análisis",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-    description:"Panel de control interactivo para la visualización de datos a gran escala con filtros, gráficos e informes exportables.",
-    englishDescription:"Interactive dashboard for large-scale data visualization with filters, charts and exportable reports.",
-    technologies: ["React", "Bootstrap", "PostgreSQL"],
-    link: "https://example.com",
-  },
+  // {
+  //   title: "Analytics Dashboard",
+  //   spTitle:"Panel de Análisis",
+  //   image:
+  //     "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
+  //   description:"Panel de control interactivo para la visualización de datos a gran escala con filtros, gráficos e informes exportables.",
+  //   englishDescription:"Interactive dashboard for large-scale data visualization with filters, charts and exportable reports.",
+  //   technologies: ["React", "Bootstrap", "PostgreSQL"],
+  //   link: "https://example.com",
+  // },
 
   {
     title: "Portfolio Website",
@@ -44,8 +43,8 @@ const projects = [
       "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1200&auto=format&fit=crop",
     description:"Portafolio personal con interfaz de usuario adaptable, animaciones fluidas y rendimiento optimizado para la web moderna.",
     englishDescription:"Personal portfolio with responsive UI, smooth animations and optimized performance for modern web.",
-    technologies: ["React", "CSS", "JavaScript"],
-    link: "https://example.com",
+    technologies: ["React", "CSS","Bootstrap5", "Django Rest Framework"],
+    link: "https://github.com/jdyeyo19/Portfolio-website",
   },
 ];
 

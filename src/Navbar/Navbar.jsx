@@ -57,7 +57,7 @@ function Navbar({darkmode, setDarkMode, englishMode, setEnglishMode}) {
           <div className="d-flex">
             <button
               className="btn btn-outline-primary p-1 mx-2"
-              onClick={()=>setEnglishMode(!englishMode)}>{englishMode?"Spanish":"Inglés"}</button>
+              onClick={()=>setEnglishMode(!englishMode)}>{englishMode?"English":"Español"}</button>
             <button
               className={darkmode ? "sun":"moon"}
               onClick={()=> setDarkMode(!darkmode)}>

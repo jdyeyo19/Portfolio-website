@@ -46,3 +46,18 @@ main {
 #about {
   padding-top: 80px;
 }
+/*Animacion mouse*/
+.scroll-mouse {
+  animation: smoothScroll 1.8s ease-in-out infinite;
+}
+
+@keyframes smoothScroll {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+}

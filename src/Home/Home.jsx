@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import bgLight from "../assets/homebglight.png";
 import bgDark from "../assets/homebgdark.png";
+import { Mouse } from "lucide-react";
 
 function Home({ darkmode, englishMode }) {
   const texts = ["Soy Juan David Martinez", "Desarrollador Full Stack"];
@@ -47,7 +48,7 @@ function Home({ darkmode, englishMode }) {
     setImageLoaded(false);
     const img = new Image();
 
-    const backgroundImage  = darkmode ? bgDark : bgLight;
+    const backgroundImage = darkmode ? bgDark : bgLight;
 
     img.src = backgroundImage;
 
@@ -58,17 +59,20 @@ function Home({ darkmode, englishMode }) {
     img.onerror = () => {
       setImageLoaded(false);
     };
-
   }, [darkmode]);
 
   return (
     <section
       id="home"
-      className="container-fluid d-flex align-items-center justify-content-center text-center"
+      className="container-fluid d-flex flex-column align-items-center justify-content-center text-center"
       style={{
         minHeight: "100vh",
         backgroundSize: "cover",
-        backgroundColor: imageLoaded? undefined : darkmode ? "#0f172a":"white",
+        backgroundColor: imageLoaded
+          ? undefined
+          : darkmode
+            ? "#0f172a"
+            : "white",
         backgroundImage: imageLoaded
           ? `url(${darkmode ? bgDark : bgLight})`
           : "none",
@@ -92,6 +96,20 @@ function Home({ darkmode, englishMode }) {
         <p className={`lead ${darkmode ? "text-light" : ""}`}>
           {`${englishMode ? "Specialize in" : "Especializado en"} MySQL, React js, y Django Framework.`}
         </p>
+      </div>
+      <div className="position-relative">
+        <div
+          className={`position-absolute top-100 start-50 translate-middle-x mb-4 mt-5 d-flex flex-column align-items-center ${
+            darkmode ? "text-light" : "text-dark"
+          }`}
+        >
+    
+          <span className="mb-2 small fw-semibold">
+            {englishMode ? "Scroll down ↓" : "Desliza ↓"}
+          </span>
+          <Mouse size={28} strokeWidth={1.8} className="scroll-mouse" />
+          
+        </div>
       </div>
     </section>
   );

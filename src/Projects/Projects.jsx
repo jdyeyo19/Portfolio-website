@@ -1,26 +1,29 @@
 import { useState, useEffect } from "react";
-import {CircleArrowRight, CircleArrowLeft} from 'lucide-react'
+import { CircleArrowRight, CircleArrowLeft } from "lucide-react";
 //Imagenes
-import littleLemonR from '../assets/littleLemonProject.png'
-import finanzasS from '../assets/finanzasS.jpg'
+import littleLemonR from "../assets/littleLemonProject.png";
+import finanzasS from "../assets/finanzasS.jpg";
 const projects = [
   {
     title: "Little Lemon Restaurant",
-    spTitle:"Restaurante Pequeño Limón",
-    image:littleLemonR,
+    spTitle: "Restaurante Pequeño Limón",
+    image: littleLemonR,
     description:
       "Aplicación front-end para restaurante, en ella podras ver información del negocio, menu, y simular la reserva de una mesa.",
-    englishDescription: "Front-end application for restaurants, in which you can view business information, menu, and simulate a table reservation.",
-    technologies: ["HTML & CSS","React", "Bootstrap5"],
+    englishDescription:
+      "Front-end application for restaurants, in which you can view business information, menu, and simulate a table reservation.",
+    technologies: ["HTML & CSS", "React", "Bootstrap5"],
     link: "https://littlelemon-seven.vercel.app/",
   },
 
   {
     title: "Finanzas Simple App",
-    spTitle:"Finanzas Simple",
+    spTitle: "Finanzas Simple",
     image: finanzasS,
-    description: "La aplicación más sencilla e intuitiva para gestionar tus ingresos y gastos personales. Con seguimiento en tiempo real, informes, gráficos y mucho más.",
-    englishDescription:"The simplest and most intuitive app for managing your personal income and expenses. With real-time tracking, reports, charts, and much more.",
+    description:
+      "La aplicación más sencilla e intuitiva para gestionar tus ingresos y gastos personales. Con seguimiento en tiempo real, informes, gráficos y mucho más.",
+    englishDescription:
+      "The simplest and most intuitive app for managing your personal income and expenses. With real-time tracking, reports, charts, and much more.",
     technologies: ["React", "Tailwind", "Django Rest Framework"],
     link: "https://finanzas-simple-rouge.vercel.app",
   },
@@ -38,24 +41,24 @@ const projects = [
 
   {
     title: "Portfolio Website",
-    spTitle:"Portafolio Personal",
+    spTitle: "Portafolio Personal",
     image:
       "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1200&auto=format&fit=crop",
-    description:"Portafolio personal con interfaz de usuario adaptable, animaciones fluidas y rendimiento optimizado para la web moderna.",
-    englishDescription:"Personal portfolio with responsive UI, smooth animations and optimized performance for modern web.",
-    technologies: ["React", "CSS","Bootstrap5", "Django Rest Framework"],
+    description:
+      "Portafolio personal con interfaz de usuario adaptable, animaciones fluidas y rendimiento optimizado para la web moderna.",
+    englishDescription:
+      "Personal portfolio with responsive UI, smooth animations and optimized performance for modern web.",
+    technologies: ["React", "CSS", "Bootstrap5", "Django Rest Framework"],
     link: "https://github.com/jdyeyo19/Portfolio-website",
   },
 ];
 
-function Projects({darkmode,englishMode}) {
+function Projects({ darkmode, englishMode }) {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) =>
-        prev === projects.length - 1 ? 0 : prev + 1
-      );
+      setCurrent((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
     }, 10000);
 
     return () => clearInterval(interval);
@@ -72,10 +75,7 @@ function Projects({darkmode,englishMode}) {
       };
     }
 
-    if (
-      difference === -1 ||
-      difference === projects.length - 1
-    ) {
+    if (difference === -1 || difference === projects.length - 1) {
       return {
         transform:
           "translateX(-320px) translateZ(0) rotateY(25deg) scale(0.85)",
@@ -84,10 +84,7 @@ function Projects({darkmode,englishMode}) {
       };
     }
 
-    if (
-      difference === 1 ||
-      difference === -(projects.length - 1)
-    ) {
+    if (difference === 1 || difference === -(projects.length - 1)) {
       return {
         transform:
           "translateX(320px) translateZ(0) rotateY(-25deg) scale(0.85)",
@@ -108,7 +105,7 @@ function Projects({darkmode,englishMode}) {
       id="projects"
       style={{
         minHeight: "100vh",
-        background: darkmode?"#0f172a":"white",
+        background: darkmode ? "#0f172a" : "white",
         padding: "100px 20px",
         overflow: "hidden",
       }}
@@ -117,11 +114,11 @@ function Projects({darkmode,englishMode}) {
         <h2
           className="text-center fw-bold mb-5"
           style={{
-            color: darkmode?"white":"black",
+            color: darkmode ? "white" : "black",
             fontSize: "clamp(2rem, 5vw, 4rem)",
           }}
         >
-          {englishMode?"Projects":"Proyectos"}
+          {englishMode ? "Projects" : "Proyectos"}
         </h2>
 
         <div
@@ -177,7 +174,7 @@ function Projects({darkmode,englishMode}) {
                       margin: 0,
                     }}
                   >
-                    {englishMode?project.title:project.spTitle}
+                    {englishMode ? project.title : project.spTitle}
                   </h3>
 
                   <p
@@ -187,7 +184,9 @@ function Projects({darkmode,englishMode}) {
                       margin: 0,
                     }}
                   >
-                    {englishMode?project.englishDescription:project.description}
+                    {englishMode
+                      ? project.englishDescription
+                      : project.description}
                   </p>
 
                   <div
@@ -228,7 +227,7 @@ function Projects({darkmode,englishMode}) {
                       transition: "0.3s",
                     }}
                   >
-                    {englishMode?"See Project":"Ver Proyecto"}
+                    {englishMode ? "See Project" : "Ver Proyecto"}
                   </a>
                 </div>
               </div>
@@ -237,26 +236,30 @@ function Projects({darkmode,englishMode}) {
         </div>
 
         {/* Indicadores */}
-        <div
-          className="d-flex justify-content-center gap-3 mt-4"
-        >
-        <button
-        style={{
-          backgroundColor:"#0f172a",
-          borderRadius: "50%",
-          marginBottom: "1rem"
-        }}
-          onClick={()=>{
-            if((current-1) < 0){
-              let max = projects.length - 1;
-              setCurrent(max);
-            }else{
-              setCurrent(current-1);
-            }
+        <div className="d-flex justify-content-center gap-3 mt-5">
+          <button
+            style={{
+              backgroundColor: "#0f172a",
+              borderRadius: "50%",
+              marginBottom: "1rem",
             }}
-        ><CircleArrowLeft style={{
-          width:"100%"
-        }} color="#38bdf8" fill="#1e293b" /></button>
+            onClick={() => {
+              if (current - 1 < 0) {
+                let max = projects.length - 1;
+                setCurrent(max);
+              } else {
+                setCurrent(current - 1);
+              }
+            }}
+          >
+            <CircleArrowLeft
+              style={{
+                width: "100%",
+              }}
+              color="#38bdf8"
+              fill="#1e293b"
+            />
+          </button>
           {projects.map((_, index) => (
             <button
               key={index}
@@ -266,28 +269,33 @@ function Projects({darkmode,englishMode}) {
                 height: "12px",
                 borderRadius: "999px",
                 border: "none",
-                background:
-                  current === index ? "#38bdf8" : "#475569",
+                background: current === index ? "#38bdf8" : "#475569",
                 transition: "0.3s",
               }}
             />
           ))}
           <button
             style={{
-              backgroundColor:"#0f172a",
+              backgroundColor: "#0f172a",
               borderRadius: "50%",
-              marginBottom: "1rem"
+              marginBottom: "1rem",
             }}
-            onClick={()=>{
-              if((current + 1) > (projects.length-1)){
+            onClick={() => {
+              if (current + 1 > projects.length - 1) {
                 setCurrent(0);
-              }else{
-                setCurrent(current+1);
+              } else {
+                setCurrent(current + 1);
               }
+            }}
+          >
+            <CircleArrowRight
+              style={{
+                width: "100%",
               }}
-          ><CircleArrowRight style={{
-          width:"100%"
-        }} color="#38bdf8" fill="#1e293b" /></button>
+              color="#38bdf8"
+              fill="#1e293b"
+            />
+          </button>
         </div>
       </div>
     </section>
